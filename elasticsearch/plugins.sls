@@ -3,6 +3,7 @@ include:
 
 {% from "elasticsearch/settings.sls" import elasticsearch with context %}
 {%- set plugins_pillar = salt['pillar.get']('elasticsearch:plugins', {}) %}
+{%- set e_version = elasticsearch.version.split('-')[0] %}
 
 {% if elasticsearch.major_version == 5 %}
   {%- set plugin_bin = 'elasticsearch-plugin' %}
@@ -16,5 +17,5 @@ elasticsearch-{{ name }}:
     - name: /usr/share/elasticsearch/bin/{{ plugin_bin }} install -b {{ repo }}
     - require:
       - sls: elasticsearch.pkg
-    - unless: test -f /usr/share/elasticsearch/plugins/{{ name }}/{{ name }}-{{ elasticsearch.version }}.jar
+    - unless: test -f /usr/share/elasticsearch/plugins/{{ name }}/{{ name }}-{{ e_version }}.jar
 {% endfor %}
