@@ -16,5 +16,5 @@ elasticsearch-{{ name }}:
     - name: /usr/share/elasticsearch/bin/{{ plugin_bin }} install -b {{ repo }}
     - require:
       - sls: elasticsearch.pkg
-    - unless: test -x /usr/share/elasticsearch/plugins/{{ name }}
+    - unless: test -f /usr/share/elasticsearch/plugins/{{ name }}/{{ name }}-{{ elasticsearch.version }}.jar
 {% endfor %}
