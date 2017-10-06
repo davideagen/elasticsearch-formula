@@ -28,7 +28,7 @@ elasticsearch_repo:
 {%- elif grains['os_family'] == 'RedHat' %}
     - name: elasticsearch
   {%- if elasticsearch.major_version == 5 %}
-    - baseurl: {{ repo_url }}/yum
+    - baseurl: {{ repo_url }}/
   {%- else %}
     - baseurl: {{ repo_url }}/centos
   {%- endif %}
