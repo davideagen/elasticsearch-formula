@@ -1,7 +1,7 @@
 {% from "elasticsearch/settings.sls" import elasticsearch with context %}
 
 {%- if elasticsearch.major_version == 5 %}
-  {%- set repo_url = 'http://yum7.biperf.com/biw/7Server/elk/5.x' %}
+  {%- set repo_url = 'http://othprod873int1.bius.bi.corp/pulp/repos/elasticsearch/5.x' %}
 {%- else %}
   {%- set repo_url = 'http://packages.elastic.co/elasticsearch/2.x' %}
 {%- endif %}
