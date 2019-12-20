@@ -1,7 +1,9 @@
 {% from "elasticsearch/settings.sls" import elasticsearch with context %}
 
-{%- if elasticsearch.major_version == 5 %}
-  {%- set repo_url = 'http://othprod873int1.bius.bi.corp/pulp/repos/elasticsearch/5.x' %}
+{%- if elasticsearch.major_version == 7 %}
+  {%- set repo_url = 'http://othprod873int1.corp.biworldwide.com/pulp/repos/upstream/elastic.co/elasticsearch/7.x/' %}
+{%- elif elasticsearch.major_version == 5 %}
+  {%- set repo_url = 'http://othprod873int1.corp.biworldwide.com/pulp/repos/upstream/elastic.co/elasticsearch/5.x/' %}
 {%- else %}
   {%- set repo_url = 'http://packages.elastic.co/elasticsearch/2.x' %}
 {%- endif %}
