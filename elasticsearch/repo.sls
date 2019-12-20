@@ -36,5 +36,5 @@ elasticsearch_repo:
   {%- endif %}
     - enabled: 1
     - gpgcheck: 1
-    - gpgkey: http://yum7.biperf.com/biw/7Server/elk/5.x/GPG-KEY-elasticsearch
+    - gpgkey: http://yum7.corp.biworldwide.com/biw/7Server/elk/5.x/GPG-KEY-elasticsearch
 {%- endif %}
