@@ -29,7 +29,7 @@ elasticsearch_repo:
     - clean_file: true
 {%- elif grains['os_family'] == 'RedHat' %}
     - name: elasticsearch
-  {%- if elasticsearch.major_version == 5 %}
+  {%- if elasticsearch.major_version == 5 or elasticsearch.major_version == 7 %}
     - baseurl: {{ repo_url }}/
   {%- else %}
     - baseurl: {{ repo_url }}/centos
